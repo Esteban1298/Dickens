@@ -1,0 +1,108 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Esteban', serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#313b47;
+    padding: 20px;
+
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+}
+
+.data{
+    display: block;
+    background-color: #313c4e;
+}
+
+
+.photo img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.subheading {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.content1{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+.content2 {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.skills {
+    flex: 1 1 100%;
+    background-color: white;
+    
+}
+.experience{
+
+    flex: 1 1 100%;
+    background-color:  white;
+    padding-top: 0;
+    padding-left: 5%;
+
+}
+
+.experience i{
+    padding-right: 2%;
+}
+
+.education{
+    padding-right: 5%;
+}
+
+.education i{
+    padding-right: 2%;
+}
+
+.skills ul, .experience ul {
+    /* list-style-type: none; */
+    padding: 2%;
+    
+}
+
+.skills h3, .experience h3 {
+    margin-top: 20px;
+}
+
+
+@media (min-width: 768px) {
+
+    .skills, .experience {
+
+
+        flex: 1 1 45%;
+    }
+        
+}
