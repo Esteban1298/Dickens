@@ -1,0 +1,275 @@
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.4;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6em;
+}
+
+nav {
+    /* display: flex; */
+    align-items: center;
+    padding: 15px 30px;
+}
+
+nav h2 {
+    margin-right: auto;
+}
+
+nav a{
+  color: wheat;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+a{
+  color: white;
+}
+
+
+h1{
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+h1::after{
+  content: "\2766";
+}
+
+.pre-title{
+  color: deeppink;
+  font-size: 1rem;
+}
+
+.title-text{
+  font-size: 6vw;
+  margin: 2rem 5%;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav a{
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: .5rem;
+  display: block;
+  text-align: center;
+  position: relative;
+  background-color: black;
+  transition: all .35s;
+  border-radius: 50%;
+}
+
+nav a::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 5px solid white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+nav li:nth-of-type(1){
+  --bc:deeppink;
+}
+
+nav li:nth-of-type(2){
+  --bc:rgb(47,210,228);
+}
+
+nav li:nth-of-type(3){
+  --bc:orangered;
+}
+
+nav li:nth-of-type(4){
+  --bc:#ecf807;
+}
+
+nav a:hover::before{
+  border-color: var(--bc);
+  inset: -6px;
+  filter: blur(4px);
+}
+
+main{
+  display: grid;
+  gap: 3rem 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+  grid-auto-flow: dense;
+}
+
+@media screen and (min-width:640px) {
+  .big{
+    grid-column: span 2;
+
+  }
+  p{
+    column-count: 2;
+    gap: 1rem;
+  }
+}
+
+article{
+  border: 1px solid white;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+article p,article h2{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+article::before{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  font-size: 18px;
+  border: 1px solid white;
+  width: 40px;
+  height: 30px;
+  border-radius: 50%;
+  top: -15px;
+  background-color: black;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.novel-date-wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+}
+
+.novel-date{
+  background-color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.novel-date::before,.novel-date::after{
+  content: "";
+  display: block;
+  border: 1px solid white;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.read-more-link{
+  padding: 0 3%;
+  font-size: .85rem;
+  text-transform: uppercase;
+  gap: .5rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  
+}
+
+.read-more-link-text{
+  padding-left: .25rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.read-more-link:hover .read-more-link-text{
+  text-decoration-color: deeppink;
+}
+
+footer{
+  padding: 0 5% 3rem 5%;
+
+}
+
+.site-title-footer p{
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.footer-menus{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.footer-menus ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.site-title-footer, .footer-menus{
+  border: 1px solid white;
+  padding: 2rem 2%;
+}
+
+@media screen and (min-width:640px) {
+  footer{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2,1fr);
+  }
+ 
+  .site-title-footer{
+    text-align: right;
+  }
+
+  .footer-menus{
+    justify-content: start;
+  }
+
+  .footer-menus ul{
+    text-align: left;
+  }
+}
+
+main {
+  counter-reset: count 0;
+}
+
+article {
+  counter-increment: count 1;
+}
+
+article::before {
+  content: counter(count);
+
+}
+
+img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0);
+  mask-image: radial-gradient(pink 20%,transparent 70%);
+}
+
